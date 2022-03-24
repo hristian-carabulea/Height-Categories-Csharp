@@ -1,24 +1,22 @@
 ﻿class HeightCategory
 {
     /// <summary>
-    /// Height categories:
-    /// Height is less than 150 cm = "Short"
-    /// Height is between 150 cm and 165 cm = "Average height"
-    /// Height is between 165 cm and 195 cm = "Tall"
-    /// Height is above 195 cm = "Very tall"
+    /// Display height category:
+    /// < 150 cm = "Short"
+    /// 150 cm to 165 cm = "Average height"
+    /// 165 cm to 195 cm = "Tall"
+    /// > 195 cm = "Very tall"
     /// Note: 1 inch = 2.54 centimeter
-    /// You need to convert the input value(inches) into centimeters.
+    /// Convert input inches into centimeters.
     /// </summary>
     static void Main()
     {
-
-        decimal heightInInches = 0;
 
         System.Console.Write("Enter height in inches using a period to separate decimals: ");
         string heightInput = System.Console.ReadLine();
 
         // display error message if input not a number
-        if (!System.Decimal.TryParse(heightInput, out heightInInches))
+        if (!System.Decimal.TryParse(heightInput, out decimal heightInInches))
         {
             System.Console.WriteLine("Wrong input");
         }
@@ -53,8 +51,6 @@
                 System.Console.WriteLine("Very tall " + heightInCm + " cm");
             }
         }
-
-        // press any key to end program running in console
         System.Console.WriteLine("Press any key to end program.");
         System.Console.ReadKey();
     }
